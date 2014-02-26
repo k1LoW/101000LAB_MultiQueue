@@ -113,7 +113,6 @@
 	The OpenGL context for rendering can be accessed and defined for CGL macros using:
 	CGLContextObj cgl_ctx = [context CGLContextObj];
 	*/
-    NSLog(@"%f",self.inputValue);
     NSString *initKey = [NSString stringWithFormat: @"queue%lu", (unsigned long)self.inputQueueIndex];
     if (self.inputFilling) {
       NSNumber *initNSNumber = [NSNumber numberWithDouble:self.inputValue];
