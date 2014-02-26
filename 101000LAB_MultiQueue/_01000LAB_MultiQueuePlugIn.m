@@ -33,7 +33,7 @@
     if([key isEqualToString:@"inputValue"])
         return [NSDictionary dictionaryWithObjectsAndKeys:
             @"Value", QCPortAttributeNameKey,
-            [NSNumber numberWithUnsignedInteger:0],  QCPortAttributeDefaultValueKey,
+            [NSNumber numberWithDouble:0],  QCPortAttributeDefaultValueKey,
             nil];
 
     else if([key isEqualToString:@"outputQueue"])
@@ -113,18 +113,18 @@
 	The OpenGL context for rendering can be accessed and defined for CGL macros using:
 	CGLContextObj cgl_ctx = [context CGLContextObj];
 	*/
+    NSLog(@"%f",self.inputValue);
     NSString *initKey = [NSString stringWithFormat: @"queue%lu", (unsigned long)self.inputQueueIndex];
     if (self.inputFilling) {
-      NSNumber *initNSNumber = [NSNumber numberWithUnsignedInteger:self.inputValue];
+      NSNumber *initNSNumber = [NSNumber numberWithDouble:self.inputValue];
       [self.queue setObject:initNSNumber forKey:initKey];
     }
     if (self.inputResetSignal) {
-        NSNumber *initNSNumber = [NSNumber numberWithUnsignedInteger:0];
+        NSNumber *initNSNumber = [NSNumber numberWithDouble:0];
         [self.queue setObject:initNSNumber forKey:initKey];
     }
-    NSNumber *qOut = (NSNumber *)[self.queue objectForKey:initKey];
-    NSUInteger iOut = [qOut unsignedIntegerValue];
-	self.outputQueue = iOut;
+    NSNumber *qOut = [self.queue objectForKey:initKey];
+	self.outputQueue = [qOut doubleValue];
 
 	return YES;
 }
