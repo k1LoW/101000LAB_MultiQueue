@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23905D0318BE262100831194 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23905D0218BE262100831194 /* Quartz.framework */; };
+		23905D0518BE262100831194 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23905D0418BE262100831194 /* Cocoa.framework */; };
+		23905D0F18BE262100831194 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23905D0D18BE262100831194 /* InfoPlist.strings */; };
+		23905D1218BE262100831194 /* _01000LAB_MultiQueuePlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 23905D1118BE262100831194 /* _01000LAB_MultiQueuePlugIn.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23905CFF18BE262100831194 /* 101000LAB_MultiQueue.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 101000LAB_MultiQueue.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		23905D0218BE262100831194 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		23905D0418BE262100831194 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		23905D0718BE262100831194 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		23905D0818BE262100831194 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		23905D0918BE262100831194 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		23905D0C18BE262100831194 /* 101000LAB_MultiQueue-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "101000LAB_MultiQueue-Info.plist"; sourceTree = "<group>"; };
+		23905D0E18BE262100831194 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		23905D1018BE262100831194 /* _01000LAB_MultiQueuePlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01000LAB_MultiQueuePlugIn.h; sourceTree = "<group>"; };
+		23905D1118BE262100831194 /* _01000LAB_MultiQueuePlugIn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01000LAB_MultiQueuePlugIn.m; sourceTree = "<group>"; };
+		23905D1318BE262100831194 /* 101000LAB_MultiQueue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "101000LAB_MultiQueue-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23905CFB18BE262100831194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23905D0518BE262100831194 /* Cocoa.framework in Frameworks */,
+				23905D0318BE262100831194 /* Quartz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23905CF518BE262100831194 = {
+			isa = PBXGroup;
+			children = (
+				23905D0A18BE262100831194 /* 101000LAB_MultiQueue */,
+				23905D0118BE262100831194 /* Frameworks */,
+				23905D0018BE262100831194 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23905D0018BE262100831194 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23905CFF18BE262100831194 /* 101000LAB_MultiQueue.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23905D0118BE262100831194 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23905D0218BE262100831194 /* Quartz.framework */,
+				23905D0418BE262100831194 /* Cocoa.framework */,
+				23905D0618BE262100831194 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23905D0618BE262100831194 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23905D0718BE262100831194 /* Foundation.framework */,
+				23905D0818BE262100831194 /* CoreData.framework */,
+				23905D0918BE262100831194 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		23905D0A18BE262100831194 /* 101000LAB_MultiQueue */ = {
+			isa = PBXGroup;
+			children = (
+				23905D1018BE262100831194 /* _01000LAB_MultiQueuePlugIn.h */,
+				23905D1118BE262100831194 /* _01000LAB_MultiQueuePlugIn.m */,
+				23905D0B18BE262100831194 /* Supporting Files */,
+			);
+			path = 101000LAB_MultiQueue;
+			sourceTree = "<group>";
+		};
+		23905D0B18BE262100831194 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23905D0C18BE262100831194 /* 101000LAB_MultiQueue-Info.plist */,
+				23905D0D18BE262100831194 /* InfoPlist.strings */,
+				23905D1318BE262100831194 /* 101000LAB_MultiQueue-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23905CFE18BE262100831194 /* 101000LAB_MultiQueue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23905D1618BE262100831194 /* Build configuration list for PBXNativeTarget "101000LAB_MultiQueue" */;
+			buildPhases = (
+				23905CFA18BE262100831194 /* Sources */,
+				23905CFB18BE262100831194 /* Frameworks */,
+				23905CFC18BE262100831194 /* Resources */,
+				23905CFD18BE262100831194 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 101000LAB_MultiQueue;
+			productName = 101000LAB_MultiQueue;
+			productReference = 23905CFF18BE262100831194 /* 101000LAB_MultiQueue.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23905CF618BE262100831194 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = 101000LAB;
+			};
+			buildConfigurationList = 23905CF918BE262100831194 /* Build configuration list for PBXProject "101000LAB_MultiQueue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 23905CF518BE262100831194;
+			productRefGroup = 23905D0018BE262100831194 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23905CFE18BE262100831194 /* 101000LAB_MultiQueue */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23905CFC18BE262100831194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23905D0F18BE262100831194 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23905CFD18BE262100831194 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies the built plug-in to \"~/Library/Graphics/Quartz Composer Plug-Ins\" and overrides any previous version at that location\n\nmkdir -p \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins\"\nrm -rf \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/101000LAB_MultiQueue.plugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/101000LAB_MultiQueue.plugin\" \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23905CFA18BE262100831194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23905D1218BE262100831194 /* _01000LAB_MultiQueuePlugIn.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		23905D0D18BE262100831194 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23905D0E18BE262100831194 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23905D1418BE262100831194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		23905D1518BE262100831194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		23905D1718BE262100831194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "101000LAB_MultiQueue/101000LAB_MultiQueue-Prefix.pch";
+				INFOPLIST_FILE = "101000LAB_MultiQueue/101000LAB_MultiQueue-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		23905D1818BE262100831194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "101000LAB_MultiQueue/101000LAB_MultiQueue-Prefix.pch";
+				INFOPLIST_FILE = "101000LAB_MultiQueue/101000LAB_MultiQueue-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23905CF918BE262100831194 /* Build configuration list for PBXProject "101000LAB_MultiQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23905D1418BE262100831194 /* Debug */,
+				23905D1518BE262100831194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23905D1618BE262100831194 /* Build configuration list for PBXNativeTarget "101000LAB_MultiQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23905D1718BE262100831194 /* Debug */,
+				23905D1818BE262100831194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 23905CF618BE262100831194 /* Project object */;
+}
