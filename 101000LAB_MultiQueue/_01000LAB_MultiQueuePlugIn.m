@@ -12,12 +12,13 @@
 #import "_01000LAB_MultiQueuePlugIn.h"
 
 #define	kQCPlugIn_Name				@"101000LAB_MultiQueue"
-#define	kQCPlugIn_Description		@"101000LAB_MultiQueue description"
+#define	kQCPlugIn_Description		@"MultiQueue for Iterator"
 
 @implementation _01000LAB_MultiQueuePlugIn
 
 // Here you need to declare the input / output properties as dynamic as Quartz Composer will handle their implementation
 //@dynamic inputFoo, outputBar;
+@dynamic inputValue, outputQueue, inputQueueIndex, inputFilling, inputResetSignal;
 
 + (NSDictionary *)attributes
 {
@@ -28,6 +29,36 @@
 + (NSDictionary *)attributesForPropertyPortWithKey:(NSString *)key
 {
 	// Specify the optional attributes for property based ports (QCPortAttributeNameKey, QCPortAttributeDefaultValueKey...).
+
+    if([key isEqualToString:@"inputValue"])
+        return [NSDictionary dictionaryWithObjectsAndKeys:
+            @"Value", QCPortAttributeNameKey,
+            [NSNumber numberWithUnsignedInteger:0],  QCPortAttributeDefaultValueKey,
+            nil];
+
+    else if([key isEqualToString:@"outputQueue"])
+        return [NSDictionary dictionaryWithObjectsAndKeys:
+                @"Queue", QCPortAttributeNameKey,
+                nil];
+    
+    else if([key isEqualToString:@"inputQueueIndex"])
+        return [NSDictionary dictionaryWithObjectsAndKeys:
+                @"Queue Index", QCPortAttributeNameKey,
+                [NSNumber numberWithUnsignedInteger:1],  QCPortAttributeDefaultValueKey,
+                nil];
+
+    else if([key isEqualToString:@"inputFilling"])
+        return [NSDictionary dictionaryWithObjectsAndKeys:
+                @"Filling", QCPortAttributeNameKey,
+                [NSNumber numberWithBool:YES], QCPortAttributeDefaultValueKey,
+                nil];
+
+    else if([key isEqualToString:@"inputResetSignal"])
+        return [NSDictionary dictionaryWithObjectsAndKeys:
+                @"Reset Signal", QCPortAttributeNameKey,
+                [NSNumber numberWithBool:YES], QCPortAttributeDefaultValueKey,
+                nil];
+
 	return nil;
 }
 
@@ -48,8 +79,9 @@
 	self = [super init];
 	if (self) {
 		// Allocate any permanent resource required by the plug-in.
+        self.queue = [NSMutableDictionary dictionary];
 	}
-	
+
 	return self;
 }
 
@@ -62,7 +94,7 @@
 {
 	// Called by Quartz Composer when rendering of the composition starts: perform any required setup for the plug-in.
 	// Return NO in case of fatal failure (this will prevent rendering of the composition to start).
-	
+
 	return YES;
 }
 
@@ -77,11 +109,23 @@
 	Called by Quartz Composer whenever the plug-in instance needs to execute.
 	Only read from the plug-in inputs and produce a result (by writing to the plug-in outputs or rendering to the destination OpenGL context) within that method and nowhere else.
 	Return NO in case of failure during the execution (this will prevent rendering of the current frame to complete).
-	
+
 	The OpenGL context for rendering can be accessed and defined for CGL macros using:
 	CGLContextObj cgl_ctx = [context CGLContextObj];
 	*/
-	
+    NSString *initKey = [NSString stringWithFormat: @"queue%lu", (unsigned long)self.inputQueueIndex];
+    if (self.inputFilling) {
+      NSNumber *initNSNumber = [NSNumber numberWithUnsignedInteger:self.inputValue];
+      [self.queue setObject:initNSNumber forKey:initKey];
+    }
+    if (self.inputResetSignal) {
+        NSNumber *initNSNumber = [NSNumber numberWithUnsignedInteger:0];
+        [self.queue setObject:initNSNumber forKey:initKey];
+    }
+    NSNumber *qOut = (NSNumber *)[self.queue objectForKey:initKey];
+    NSUInteger iOut = [qOut unsignedIntegerValue];
+	self.outputQueue = iOut;
+
 	return YES;
 }
 
