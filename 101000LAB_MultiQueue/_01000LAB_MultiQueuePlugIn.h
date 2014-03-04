@@ -8,7 +8,9 @@
 
 #import <Quartz/Quartz.h>
 
-@interface _01000LAB_MultiQueuePlugIn : QCPlugIn
+@interface _01000LAB_MultiQueuePlugIn : QCPlugIn {
+    id qQueue;
+}
 
 // Declare here the properties to be used as input and output ports for the plug-in e.g.
 //@property double inputFoo;
@@ -18,5 +20,4 @@
     @property (assign) NSUInteger inputQueueIndex;
     @property BOOL inputFilling;
     @property BOOL inputResetSignal;
-    @property id queue;
 @end

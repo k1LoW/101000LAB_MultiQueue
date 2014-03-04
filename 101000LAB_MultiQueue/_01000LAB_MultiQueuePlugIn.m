@@ -20,6 +20,11 @@
 //@dynamic inputFoo, outputBar;
 @dynamic inputValue, outputQueue, inputQueueIndex, inputFilling, inputResetSignal;
 
+- (void) dealloc {
+    [qQueue release];
+    [super dealloc];
+}
+
 + (NSDictionary *)attributes
 {
 	// Return a dictionary of attributes describing the plug-in (QCPlugInAttributeNameKey, QCPlugInAttributeDescriptionKey...).
@@ -79,7 +84,7 @@
 	self = [super init];
 	if (self) {
 		// Allocate any permanent resource required by the plug-in.
-        self.queue = [NSMutableDictionary dictionary];
+        qQueue = [[NSMutableDictionary alloc] init];
 	}
 
 	return self;
@@ -116,13 +121,13 @@
     NSString *initKey = [NSString stringWithFormat: @"queue%lu", (unsigned long)self.inputQueueIndex];
     if (self.inputFilling) {
       NSNumber *initNSNumber = [NSNumber numberWithDouble:self.inputValue];
-      [self.queue setObject:initNSNumber forKey:initKey];
+      [qQueue setObject:initNSNumber forKey:initKey];
     }
     if (self.inputResetSignal) {
         NSNumber *initNSNumber = [NSNumber numberWithDouble:0];
-        [self.queue setObject:initNSNumber forKey:initKey];
+        [qQueue setObject:initNSNumber forKey:initKey];
     }
-    NSNumber *qOut = [self.queue objectForKey:initKey];
+    NSNumber *qOut = [qQueue objectForKey:initKey];
 	self.outputQueue = [qOut doubleValue];
 
 	return YES;
