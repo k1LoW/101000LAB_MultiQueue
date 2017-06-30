@@ -3,7 +3,7 @@
 
 Multi Queue Plugin for Quarz Composer Iterator
 
-![sample](http://github.com/k1LoW/101000LAB_MultiQueue/raw/master/screenshot.png)
+![sample](screenshot.png)
 
 
     function (__number Queue) main (
